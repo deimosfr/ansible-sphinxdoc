@@ -18,10 +18,10 @@
     - texlive-latex-recommended
     - texlive-latex-extra
     - texlive-fonts-recommended
-  when: sphinxdoc_install_pdf_dep is True
+  when: sphinxdoc_install_pdf_dep
   tags: [sphinxdoc]
 
 - name: install ReadTheDoc theme
   pip: name=sphinx_rtd_theme
-  when: sphinxdoc_install_rdt_them is True
+  when: sphinxdoc_install_rdt_them
   tags: [sphinxdoc]
