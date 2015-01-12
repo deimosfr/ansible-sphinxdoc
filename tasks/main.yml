@@ -1,0 +1,27 @@
+---
+
+- name: installing sphinxdoc packages
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - python
+    - python-pip
+    - sphinx-doc
+    - sphinx-common
+    - python3-sphinx
+    - libjs-sphinxdoc
+  tags: [sphinxdoc]
+
+- name: installing sphinxdoc packages for PDF Latex
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - texlive-latex-base
+    - texlive-latex-recommended
+    - texlive-latex-extra
+    - texlive-fonts-recommended
+  when: sphinxdoc_install_pdf_dep is True
+  tags: [sphinxdoc]
+
+- name: install ReadTheDoc theme
+  pip: name=sphinx_rtd_theme
+  when: sphinxdoc_install_rdt_them is True
+  tags: [sphinxdoc]

@@ -1,0 +1,7 @@
+---
+
+# Install PDF Latex dependencies
+sphinxdoc_install_pdf_dep: False
+
+# Install ReadTheDoc theme
+sphinxdoc_install_rdt_theme: False
