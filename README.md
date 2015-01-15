@@ -16,7 +16,11 @@ The variables that can be passed to this role and a brief description about
 them are as follows.
 
 ```
-sphinxdoc_install_rdt_theme: True
+# Install PDF Latex dependencies
+sphinxdoc_install_pdf_dep: False
+
+# Install ReadTheDoc theme
+sphinxdoc_install_rdt_theme: False
 ```
 
 Examples
@@ -29,7 +33,8 @@ Examples
   user: root
   roles:
     - sphinxdoc
-
+  vars:
+    - sphinxdoc_install_rdt_theme: True
 ```
 
 Dependencies
